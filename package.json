@@ -1,0 +1,13 @@
+{
+  "name": "promise_memoization",
+  "version": "0.0.1",
+  "description": "A small project that demonstrates Promise Memoization in a browser context.",
+  "scripts": {
+    "start": "http-server -p 8000"
+  },
+  "author": "Matthew R. Stennett",
+  "license": "NONE",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

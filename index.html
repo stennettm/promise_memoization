@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="">
+<head>
+  <script src="main.js"></script>
+  <title>Promise Memoization</title>
+</head>
+<body>
+  <script lang="javascript">
+    // Let's simulate several widgets calling the same endpoint
+    function simulateWidgets() {
+      for(let i = 0; i < Math.floor(Math.random() * 10) + 1; i++) {
+        console.log("Widget " + i);
+
+        MyFancySDK.getData("data.json")
+          .then((data) => {
+            // The data returns asynchronously, e.g. 'await Promise' or 'Promise.then'
+            console.log("Widget " + i + " " + JSON.stringify(data));
+          });
+      }
+    }
+
+    // Let's simulate user activity that results in requiring additional calls to the SDK every five seconds
+    simulateWidgets();
+    setInterval(() => {
+      simulateWidgets();
+    }, 5000);
+
+  </script>
+</body>
+</html>
